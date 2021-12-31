@@ -51,6 +51,7 @@ module.exports = {
     'object-shorthand': ['error', 'always', { ignoreConstructors: false, avoidQuotes: true }],
     'block-scoped-var': 'error',
     'guard-for-in': 'off', // add
+    'class-methods-use-this': 'off', // add
 
     // @typescript
     '@typescript-eslint/explicit-module-boundary-types': 'off',

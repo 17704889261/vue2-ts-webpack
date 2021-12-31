@@ -14,6 +14,12 @@ const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i // 
 const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
 const resolve = dir => path.join(__dirname, dir)
 
+const packages = require('./package.json')
+
+const APP_PKG = {
+  pkg: packages
+}
+
 module.exports = {
   // 公共路径
   publicPath: process.env.NODE_ENV === 'production' ? '/vue3-ts-template/' : '/',
@@ -39,6 +45,11 @@ module.exports = {
     config.plugin('html').tap(args => {
       // 修复 Lazy loading routes Error
       args[0].chunksSortMode = 'none'
+      return args
+    })
+    // 添加全局变量
+    config.plugin('define').tap(args => {
+      args[0].APP_PKG = JSON.stringify(APP_PKG)
       return args
     })
     // 添加别名
@@ -128,7 +139,9 @@ module.exports = {
     extract: IS_PROD,
     // 给 sass-loader 传递相关选项
     loaderOptions: {
-      sass: {}
+      sass: {
+        prependData: `@import "@/assets/styles/transitions.scss";`
+      }
     }
   },
   devServer: {

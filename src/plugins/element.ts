@@ -1,8 +1,59 @@
-import { Input, Button, Loading, Alert, ColorPicker, Message } from 'element-ui'
+import {
+  Input,
+  Button,
+  Card,
+  Form,
+  FormItem,
+  ColorPicker,
+  Alert,
+  Message,
+  Loading,
+  Menu,
+  MenuItem,
+  MenuItemGroup,
+  Submenu,
+  Drawer,
+  Divider,
+  Container,
+  Header,
+  Main,
+  Footer,
+  Aside,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
+  Table,
+  TableColumn
+} from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // import locale from 'element-ui/lib/locale/lang/zh-CN'
 
-const components = [Input, Button, Loading.directive, Alert, ColorPicker]
+const components = [
+  Input,
+  Button,
+  Card,
+  Form,
+  FormItem,
+  ColorPicker,
+  Alert,
+  Loading.directive,
+  Menu,
+  MenuItem,
+  MenuItemGroup,
+  Submenu,
+  Drawer,
+  Divider,
+  Container,
+  Header,
+  Main,
+  Footer,
+  Aside,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
+  Table,
+  TableColumn
+]
 
 export default (app: any) => {
   components.forEach(v => {

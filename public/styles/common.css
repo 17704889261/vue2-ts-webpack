@@ -4,3 +4,16 @@
   margin: 0;
   padding: 0;
 }
+
+/* 先做一套常规模式的主题 */
+body {
+  --el-color-primary: #3e9dfc;
+  --el-color-primary-light-9: #3e9dfce6;
+
+
+  /* ===== 布局需要的内容 ===== */
+  --layout-base-height: 48px;
+  --layout-base-color: #001529;
+  --layout-base-backgroud-color: #f5f7fa;
+}
+
